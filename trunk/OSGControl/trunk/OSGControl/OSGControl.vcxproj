@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0AF84127-0BD9-4787-AD4F-D6C97C6493C9}</ProjectGuid>
+    <RootNamespace>OSGControl</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>I:\OpenSceneGraph\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
+      <StringPooling>false</StringPooling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;I:\OpenSceneGraph\lib\OpenThreadsd.lib;I:\OpenSceneGraph\lib\osgd.lib;I:\OpenSceneGraph\lib\osgDBd.lib;I:\OpenSceneGraph\lib\osgUtild.lib;I:\OpenSceneGraph\lib\osgGAd.lib;I:\OpenSceneGraph\lib\osgViewerd.lib;I:\OpenSceneGraph\lib\osgTextd.lib;I:\OpenSceneGraph\lib\osgEarthUtild.lib;glu32.lib;opengl32.lib;I:\OpenSceneGraph\3rdParty\lib\zlibd.lib</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>L:\OpenSceneGraph\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;L:\OpenSceneGraph\lib\OpenThreads.lib;L:\OpenSceneGraph\lib\osg.lib;L:\OpenSceneGraph\lib\osgDB.lib;L:\OpenSceneGraph\lib\osgUtil.lib;L:\OpenSceneGraph\lib\osgGA.lib;L:\OpenSceneGraph\lib\osgViewer.lib;L:\OpenSceneGraph\lib\osgText.lib;L:\OpenSceneGraph\lib\osgEarthUtil.lib;glu32.lib;opengl32.lib;L:\OpenSceneGraph\3rdParty\lib\zlib.lib</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\OSGControl.ico" />
+    <None Include="res\OSGControl.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CGridListCtrlEx\CGridColumnManager.h" />
+    <ClInclude Include="CGridListCtrlEx\CGridColumnManagerProfile.h" />
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTrait.h" />
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTraitCombo.h" />
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTraitDateTime.h" />
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTraitEdit.h" />
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTraitImage.h" />
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTraitText.h" />
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTraitVisitor.h" />
+    <ClInclude Include="CGridListCtrlEx\CGridListCtrlEx.h" />
+    <ClInclude Include="CGridListCtrlEx\CGridListCtrlGroups.h" />
+    <ClInclude Include="CGridListCtrlEx\CGridRowTrait.h" />
+    <ClInclude Include="CGridListCtrlEx\CGridRowTraitText.h" />
+    <ClInclude Include="CGridListCtrlEx\CGridRowTraitVisitor.h" />
+    <ClInclude Include="CGridListCtrlEx\CGridRowTraitXP.h" />
+    <ClInclude Include="ChildDialog\GenericChildDialog.h" />
+    <ClInclude Include="Interpolator\CRSpline.h" />
+    <ClInclude Include="Interpolator\vec3.h" />
+    <ClInclude Include="KeyframeList.h" />
+    <ClInclude Include="OSGAnimationPathManipulator.h" />
+    <ClInclude Include="OSGControl.h" />
+    <ClInclude Include="OSGControlDlg.h" />
+    <ClInclude Include="OSGCTRL.h" />
+    <ClInclude Include="OSG\EnvOSG.h" />
+    <ClInclude Include="OSG\MFC_OSG.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SetAutoTimeDlg.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CGridListCtrlEx\CGridColumnManagerProfile.cpp" />
+    <ClCompile Include="CGridListCtrlEx\CGridColumnTraitCombo.cpp" />
+    <ClCompile Include="CGridListCtrlEx\CGridColumnTraitDateTime.cpp" />
+    <ClCompile Include="CGridListCtrlEx\CGridColumnTraitEdit.cpp" />
+    <ClCompile Include="CGridListCtrlEx\CGridColumnTraitImage.cpp" />
+    <ClCompile Include="CGridListCtrlEx\CGridColumnTraitText.cpp" />
+    <ClCompile Include="CGridListCtrlEx\CGridListCtrlEx.cpp" />
+    <ClCompile Include="CGridListCtrlEx\CGridListCtrlGroups.cpp" />
+    <ClCompile Include="CGridListCtrlEx\CGridRowTraitText.cpp" />
+    <ClCompile Include="CGridListCtrlEx\CGridRowTraitXP.cpp" />
+    <ClCompile Include="ChildDialog\GenericChildDialog.cpp" />
+    <ClCompile Include="Interpolator\CRSpline.cpp" />
+    <ClCompile Include="KeyframeList.cpp" />
+    <ClCompile Include="OSGAnimationPathManipulator.cpp" />
+    <ClCompile Include="OSGControl.cpp" />
+    <ClCompile Include="OSGControlDlg.cpp" />
+    <ClCompile Include="OSGCTRL.cpp" />
+    <ClCompile Include="OSG\EnvOSG.cpp" />
+    <ClCompile Include="OSG\MFC_OSG.cpp" />
+    <ClCompile Include="SetAutoTimeDlg.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="OSGControl.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="OSGControl.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

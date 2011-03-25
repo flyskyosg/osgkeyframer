@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Child Dialog">
+      <UniqueIdentifier>{2dadbeeb-3583-44b7-ad19-a03a9fbf1040}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GridControl">
+      <UniqueIdentifier>{52a4395d-2c7d-4d85-b5c9-5eba296c9719}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OSG">
+      <UniqueIdentifier>{a2028718-53e6-4344-ab1d-592936fa1361}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interpolator">
+      <UniqueIdentifier>{0e9d2b13-5f66-4556-9ad7-eb6889e29984}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\OSGControl.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\OSGControl.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="OSGControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OSGControlDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildDialog\GenericChildDialog.h">
+      <Filter>Child Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="OSGCTRL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridColumnManager.h">
+      <Filter>GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridColumnManagerProfile.h">
+      <Filter>GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTrait.h">
+      <Filter>GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTraitCombo.h">
+      <Filter>GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTraitDateTime.h">
+      <Filter>GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTraitEdit.h">
+      <Filter>GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTraitImage.h">
+      <Filter>GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTraitText.h">
+      <Filter>GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridColumnTraitVisitor.h">
+      <Filter>GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridListCtrlEx.h">
+      <Filter>GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridListCtrlGroups.h">
+      <Filter>GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridRowTrait.h">
+      <Filter>GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridRowTraitText.h">
+      <Filter>GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridRowTraitVisitor.h">
+      <Filter>GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridListCtrlEx\CGridRowTraitXP.h">
+      <Filter>GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="Interpolator\CRSpline.h">
+      <Filter>Interpolator</Filter>
+    </ClInclude>
+    <ClInclude Include="OSG\MFC_OSG.h">
+      <Filter>OSG</Filter>
+    </ClInclude>
+    <ClInclude Include="Interpolator\vec3.h">
+      <Filter>Interpolator</Filter>
+    </ClInclude>
+    <ClInclude Include="OSG\EnvOSG.h">
+      <Filter>OSG</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyframeList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SetAutoTimeDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OSGAnimationPathManipulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="OSGControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OSGControlDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildDialog\GenericChildDialog.cpp">
+      <Filter>Child Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="OSGCTRL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridListCtrlEx\CGridColumnManagerProfile.cpp">
+      <Filter>GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridListCtrlEx\CGridColumnTraitCombo.cpp">
+      <Filter>GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridListCtrlEx\CGridColumnTraitDateTime.cpp">
+      <Filter>GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridListCtrlEx\CGridColumnTraitEdit.cpp">
+      <Filter>GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridListCtrlEx\CGridColumnTraitImage.cpp">
+      <Filter>GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridListCtrlEx\CGridColumnTraitText.cpp">
+      <Filter>GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridListCtrlEx\CGridListCtrlEx.cpp">
+      <Filter>GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridListCtrlEx\CGridListCtrlGroups.cpp">
+      <Filter>GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridListCtrlEx\CGridRowTraitText.cpp">
+      <Filter>GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridListCtrlEx\CGridRowTraitXP.cpp">
+      <Filter>GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="Interpolator\CRSpline.cpp">
+      <Filter>Interpolator</Filter>
+    </ClCompile>
+    <ClCompile Include="OSG\MFC_OSG.cpp">
+      <Filter>OSG</Filter>
+    </ClCompile>
+    <ClCompile Include="OSG\EnvOSG.cpp">
+      <Filter>OSG</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyframeList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SetAutoTimeDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OSGAnimationPathManipulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="OSGControl.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
