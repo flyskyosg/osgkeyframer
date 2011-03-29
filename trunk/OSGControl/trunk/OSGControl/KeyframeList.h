@@ -3,6 +3,8 @@
 #include "osg\AnimationPath"
 #include "osgEarthUtil\EarthManipulator"
 
+#include "osgEarthUtil\Viewpoint"
+
 #define LABEL_COL		0
 #define TIME_COL		1
 #define DURATION_COL	2
@@ -13,7 +15,7 @@ typedef struct
 	float timeStamp;
 	float duration;
 	double distFromPrev;
-	osgEarthUtil::Viewpoint viewPoint;
+	osgEarth::Util::Viewpoint viewPoint;
 }KeyFrame;
 
 class CKeyframeList :

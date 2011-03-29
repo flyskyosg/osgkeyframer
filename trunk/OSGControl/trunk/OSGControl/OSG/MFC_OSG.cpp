@@ -2,7 +2,7 @@
 //
 #include "stdafx.h"
 #include "MFC_OSG.h"
-
+#include "osgEarthUtil\Viewpoint"
 
 
 
@@ -79,7 +79,7 @@ void cOSG::InitOSG()
 
 void cOSG::InitManipulators(void)
 {    
-	m_earthManip = new osgEarthUtil::EarthManipulator();
+	m_earthManip = new osgEarth::Util::EarthManipulator();
 }
 
 
@@ -190,7 +190,7 @@ void cOSG::HandleMsg(osgRequest* &req)
 	case REQ_SETCAMVIEWPOINT:
 		{
 			if(!m_apm_loaded){
-				osgEarthUtil::Viewpoint* vp = (osgEarthUtil::Viewpoint*) req->lParam;
+				osgEarth::Util::Viewpoint* vp = (osgEarth::Util::Viewpoint*) req->lParam;
 				m_earthManip->setViewpoint(*vp);	
 				delete vp;
 			}

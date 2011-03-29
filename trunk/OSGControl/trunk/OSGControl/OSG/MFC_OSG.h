@@ -4,7 +4,7 @@
 
 #include <osgViewer/Viewer>
 #include <osgViewer/ViewerEventHandlers>
-#include <osgViewer/api/win32/GraphicsWindowWin32>
+#include <osgViewer/GraphicsWindowWin32>
 
 #include <osgDB/DatabasePager>
 #include <osgDB/Registry>
@@ -78,7 +78,7 @@ private:
 	osg::ref_ptr<osg::Group> mRoot;
 	osg::ref_ptr<osg::Node> mModel;
 
-	osg::ref_ptr<osgEarthUtil::EarthManipulator> m_earthManip;//osgEarth Camera Manipulator
+	osg::ref_ptr<osgEarth::Util::EarthManipulator> m_earthManip;//osgEarth Camera Manipulator
 	osg::ref_ptr<COSGAnimationPathManipulator> m_apm;//Customized AnimationPath Camera Manipulator
 
 	bool m_apm_isPaused;

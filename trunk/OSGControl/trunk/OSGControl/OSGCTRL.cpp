@@ -10,6 +10,8 @@
 #include "Interpolator\CRSpline.h"
 #include "SetAutoTimeDlg.h"
 
+#include "osgEarthUtil\Viewpoint"
+
 // COSGCTRL dialog
 
 IMPLEMENT_DYNAMIC(COSGCTRL, CDialog)
@@ -115,7 +117,7 @@ void COSGCTRL::OnBnClickedCaptureBtn()
 	osg::Matrixd m = m_pOSG->getViewer()->getCameraManipulator()->getMatrix();    	
 	KeyFrame* key = new KeyFrame;
 	key->ctrlPoint = osg::AnimationPath::ControlPoint(m.getTrans(), m.getRotate());
-	key->viewPoint = ( (osgEarthUtil::EarthManipulator*) m_pOSG->getViewer()->getCameraManipulator())->getViewpoint();
+	key->viewPoint = ( (osgEarth::Util::EarthManipulator*) m_pOSG->getViewer()->getCameraManipulator())->getViewpoint();
 	key->duration = 1.0;
 
 	m_ListCtrl.AddItem(key);
@@ -422,9 +424,9 @@ void COSGCTRL::OnLvnItemchangedList1(NMHDR *pNMHDR, LRESULT *pResult)
 	{				
 		m_selectedItem = pNMLV->iItem;
 		//set camera to viewPoint (EarthManipulator specific!)
-		osgEarthUtil::Viewpoint* viewPoint;
+		osgEarth::Util::Viewpoint* viewPoint;
 		KeyFrame* key = (KeyFrame*) m_ListCtrl.GetItemData(m_selectedItem);
-		viewPoint = new osgEarthUtil::Viewpoint(key->viewPoint);
+		viewPoint = new osgEarth::Util::Viewpoint(key->viewPoint);
 		m_pOSG->EnqueueRequest(REQ_SETCAMVIEWPOINT,(LPARAM) viewPoint);
 		
 		//enable delete button
