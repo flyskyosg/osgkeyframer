@@ -17,14 +17,12 @@
 #include <osgViewer/ViewerEventHandlers>
 #include <osgViewer/Renderer>
 
-//#include <osgGA/TrackballManipulator>
-//#include <osgGA/FlightManipulator>
-//#include <osgGA/DriveManipulator>
-//#include <osgGA/KeySwitchMatrixManipulator>
+
 #include <osgGA/StateSetManipulator>
 #include <osgGA/AnimationPathManipulator>
-//#include <osgGA/TerrainManipulator>
-//#include <osgGA/SphericalManipulator>
+
+#include <osgEarthUtil/SkyNode>
+#include <osgEarth/MapNode>
 
 #include <iostream>
 
@@ -53,10 +51,8 @@ public:
 		{
 			_image = new osg::Image;
 		}
-		~ WindowCaptureCallback()
-		{
-		   
-		}
+		~ WindowCaptureCallback(){}
+
 	void WindowCaptureCallback::setFileName(const std::string& name)
 		{
 			_fileName = name;
@@ -80,12 +76,9 @@ public:
 				int width = gc->getTraits()->width;
 				int height = gc->getTraits()->height;
 
-				std::cout<<"Capture: size="<<width<<"x"<<height<<", format="<<(pixelFormat == GL_RGBA ? "GL_RGBA":"GL_RGB")<<std::endl;
-
 				_image->readPixels(0, 0, width, height, pixelFormat, GL_UNSIGNED_BYTE);
 			}			
-			
-				
+							
 			if (!_fileName.empty())
 			{
 				std::cout << "Writing to: " << _fileName << std::endl;
@@ -109,8 +102,8 @@ public:
 		: osgViewer::Renderer(camera),
 		  _cullOnly(true)
 		{
-			setTargetFrameRate(1);
-			setMinimumTimeAvailableForGLCompileAndDeletePerFrame(1);
+			//setTargetFrameRate(1);
+			//setMinimumTimeAvailableForGLCompileAndDeletePerFrame(1);
 		}
 
 	/** Set flag to omit drawing in renderingTraversals */
@@ -168,6 +161,17 @@ int CRenderer::Render(int argc, char** argv)
 		return 1;
 	}
 
+	//add sky
+	//create SkyNode
+	osg::Group* m_Root = new osg::Group();
+	osgEarth::MapNode* mapnode = osgEarth::MapNode::findMapNode(loadedModel);
+	osgEarth::Util::SkyNode* m_Sky= new osgEarth::Util::SkyNode( mapnode->getMap() );
+	m_Sky->setDateTime( 2011, 6, 6, 20 );
+	m_Root->addChild( m_Sky );	
+	m_Root->addChild(loadedModel);
+	//attach viewer to Sky
+		m_Sky->attach( &viewer );
+
 	{
 		osg::DisplaySettings* ds = osg::DisplaySettings::instance();
 		osg::ref_ptr<osg::GraphicsContext::Traits> traits = new osg::GraphicsContext::Traits(ds);
@@ -211,7 +215,8 @@ int CRenderer::Render(int argc, char** argv)
 		{
 			osg::notify(osg::NOTICE)<<"Pixel buffer has not been created successfully."<<std::endl;
 		}
-			
+		
+
 		// Correct aspect ratio
 		double fovy,aspectRatio,z1,z2;
 		viewer.getCamera()->getProjectionMatrixAsPerspective(fovy,aspectRatio,z1,z2);
@@ -232,7 +237,7 @@ int CRenderer::Render(int argc, char** argv)
 	viewer.setThreadingModel(osgViewer::Viewer::SingleThreaded);
 
 	// Set the final SceneData to show
-	viewer.setSceneData( loadedModel.get() );
+	viewer.setSceneData( m_Root );
 
 	// Realize GUI
 	viewer.realize();
@@ -278,7 +283,7 @@ int CRenderer::Render(int argc, char** argv)
 				PostMessage(m_parentHWND,WM_USER_THREAD_UPDATE_PROGRESS,(WPARAM)msg,FILES_REMAINING);				
 			}
 
-			Sleep(200);
+			Sleep(20);
 		}			
 		
 		customRenderer->setCullOnly(false);
