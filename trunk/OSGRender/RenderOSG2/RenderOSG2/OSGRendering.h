@@ -40,7 +40,7 @@ private:
 	HWND m_receiver;
 public:
 	WinNotifyHandler(HWND receiver);
-    void notify(osg::NotifySeverity severity, const char *message);
+	void notify(osg::NotifySeverity severity, const char *message);
 	void changeReceiver(HWND receiver){m_receiver = receiver;}
 };
 
