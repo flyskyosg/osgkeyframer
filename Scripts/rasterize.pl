@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# use module
+# use modules
 use XML::Simple;
 use Data::Dumper;
 print "===================================================\n";
@@ -40,7 +40,7 @@ $data = $xml->XMLin($descript);
 # dereference hash ref
 $field = $data->{field}[0];
 	
-@args = ("L:\\gdal_bin\\gdal_rasterize.exe",
+@args = ("gdal_rasterize.exe",
 			"-init", "0",
 			"-init", "0",
 			"-init", "0",
@@ -64,7 +64,7 @@ foreach $field ( @{$data->{field}})
 		{
 			if((exists $attrib->{minVal}) && (exists $attrib->{maxVal}))
 			{
-				@args = ("L:\\gdal_bin\\gdal_rasterize.exe",
+				@args = ("gdal_rasterize.exe",
 					"-b", "1",
 					"-b", "2",
 					"-b", "3",
@@ -79,7 +79,7 @@ foreach $field ( @{$data->{field}})
 			}
 			elsif(exists $attrib->{value})
 			{
-				@args = ("L:\\gdal_bin\\gdal_rasterize.exe",
+				@args = ("gdal_rasterize.exe",
 					"-b", "1",
 					"-b", "2",
 					"-b", "3",
@@ -99,7 +99,7 @@ foreach $field ( @{$data->{field}})
 	}	
 }
 #warp the raster to osgEarth coordinate system
-@args = ("L:\\gdal_bin\\gdalwarp",
+@args = ("gdalwarp",
 			"-multi",
 			"-t_srs", "epsg:4326",
 			"-r", "cubic",
@@ -107,7 +107,7 @@ foreach $field ( @{$data->{field}})
 system(@args);
 
 #tile the raster
-@args = ("L:\\gdal_bin\\gdal_translate",
+@args = ("gdal_translate",
 			"-of", "GTiff",
 			"-co", "\"TILED=YES\"",
 			".\\reprojected.tif",
@@ -115,7 +115,7 @@ system(@args);
 system(@args);
 
 #mipmap the raster
-@args = ("L:\\gdal_bin\\gdaladdo",
+@args = ("gdaladdo",
 			"-r", "gauss",
 			$filename,
 			"2", "4", "8", "16");
